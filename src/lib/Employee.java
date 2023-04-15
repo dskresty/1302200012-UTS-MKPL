@@ -11,9 +11,9 @@ public class PersonalInformation {
     private final String idNumber;
     private final String address;
     private final boolean isForeigner;
-    private final boolean gender;
+    private final Gender gender;
 
-    public PersonalInformation(String firstName, String lastName, String idNumber, String address, boolean isForeigner, boolean gender) {
+    public PersonalInformation(String firstName, String lastName, String idNumber, String address, boolean isForeigner, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.idNumber = idNumber;
@@ -21,8 +21,11 @@ public class PersonalInformation {
         this.isForeigner = isForeigner;
         this.gender = gender;
     }
+}
 
-    // Getters for all fields
+public enum Gender {
+    LAKI,
+    PEREMPUAN
 }
 
 public class Employee {
