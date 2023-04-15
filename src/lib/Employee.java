@@ -5,47 +5,53 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
+public class PersonalInformation {
+    private final String firstName;
+    private final String lastName;
+    private final String idNumber;
+    private final String address;
+    private final boolean isForeigner;
+    private final boolean gender;
+
+    public PersonalInformation(String firstName, String lastName, String idNumber, String address, boolean isForeigner, boolean gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.idNumber = idNumber;
+        this.address = address;
+        this.isForeigner = isForeigner;
+        this.gender = gender;
+    }
+
+    // Getters for all fields
+}
+
 public class Employee {
+    private final String employeeId;
+    private final PersonalInformation personalInformation;
+    private final int yearJoined;
+    private final int monthJoined;
+    private final int dayJoined;
 
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
-	
-	private int yearJoined;
-	private int monthJoined;
-	private int dayJoined;
-	private int monthWorkingInYear;
-	
-	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
-	
-	private int monthlySalary;
-	private int otherMonthlyIncome;
-	private int annualDeductible;
-	
-	private String spouseName;
-	private String spouseIdNumber;
+    private int monthlySalary;
+    private int otherMonthlyIncome;
+    private int annualDeductible;
 
-	private List<String> childNames;
-	private List<String> childIdNumbers;
+    private String spouseName;
+    private String spouseIdNumber;
+
+    private List<String> childNames;
+    private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
-		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
-	}
+	public Employee(String employeeId, PersonalInformation personalInformation, int yearJoined, int monthJoined, int dayJoined) {
+        this.employeeId = employeeId;
+        this.personalInformation = personalInformation;
+        this.yearJoined = yearJoined;
+        this.monthJoined = monthJoined;
+        this.dayJoined = dayJoined;
+
+        childNames = new LinkedList<String>();
+        childIdNumbers = new LinkedList<String>();
+    }
 	
 	/**
 	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
